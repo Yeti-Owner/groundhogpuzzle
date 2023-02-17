@@ -11,6 +11,9 @@ var CurrentScene:Node
 var NextTransition:String
 var CurrentMode:String
 
+func _ready():
+	Game.use_occlusion_culling = true
+
 func _change_scene(scene:String, type:String = "normal"):
 	match type:
 		"normal":

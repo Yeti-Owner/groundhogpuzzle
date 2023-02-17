@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4aclt0j3mowm"]
+[gd_scene load_steps=7 format=3 uid="uid://c4aclt0j3mowm"]
 
 [ext_resource type="Script" path="res://scripts/scene_manager.gd" id="1_hn3y2"]
+[ext_resource type="PackedScene" uid="uid://bgiqccc5156ph" path="res://scenes/UI/gui.tscn" id="2_suoug"]
 
 [sub_resource type="Animation" id="Animation_3po2j"]
 resource_name = "fade_in"
@@ -109,6 +110,8 @@ stretch_shrink = 2
 
 [node name="HUD" type="Control" parent="GameScene"]
 layout_mode = 2
+
+[node name="GUI" parent="GameScene/HUD" instance=ExtResource("2_suoug")]
 
 [node name="Game" type="SubViewport" parent="GameScene"]
 process_mode = 3
