@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Groundhog Puzzle"
-run/main_scene="res://scenes/scene_manager.tscn"
+run/main_scene="res://scenes/first_scene.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SceneManager="*res://scenes/scene_manager.tscn"
 
 [display]
 

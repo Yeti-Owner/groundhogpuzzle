@@ -1,10 +1,104 @@
-[gd_scene load_steps=2 format=3 uid="uid://c4aclt0j3mowm"]
+[gd_scene load_steps=6 format=3 uid="uid://c4aclt0j3mowm"]
 
-[ext_resource type="PackedScene" uid="uid://lqxuhdkbvoe" path="res://world.tscn" id="1_a1rx5"]
+[ext_resource type="Script" path="res://scripts/scene_manager.gd" id="1_hn3y2"]
+
+[sub_resource type="Animation" id="Animation_3po2j"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Transitions/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jyvu6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Transitions/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_n1hpk"]
+resource_name = "fade_out"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Transitions/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_scene_load"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dqu3g"]
+_data = {
+"RESET": SubResource("Animation_jyvu6"),
+"fade_in": SubResource("Animation_3po2j"),
+"fade_out": SubResource("Animation_n1hpk")
+}
 
 [node name="SceneManager" type="Node"]
+script = ExtResource("1_hn3y2")
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Transitions" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Transitions"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="TransitionPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_dqu3g")
+}
+
+[node name="GameScene" type="SubViewportContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -13,7 +107,10 @@ grow_vertical = 2
 stretch = true
 stretch_shrink = 2
 
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+[node name="HUD" type="Control" parent="GameScene"]
+layout_mode = 2
+
+[node name="Game" type="SubViewport" parent="GameScene"]
 process_mode = 3
 handle_input_locally = false
 use_debanding = true
@@ -24,5 +121,3 @@ audio_listener_enable_3d = true
 size = Vector2i(640, 360)
 size_2d_override_stretch = true
 render_target_update_mode = 4
-
-[node name="world" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_a1rx5")]
