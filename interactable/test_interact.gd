@@ -7,4 +7,6 @@ func get_interaction_icon():
 	return "res://assets/textures/ui/question.png"
 
 func interact():
-	print("interacted with block")
+	if not Eventbus.JournalEntries.has("- This is Entry 1"):
+		Eventbus.JournalEntries["- This is Entry 1"] = 1
+		Eventbus.emit_signal("UpdatedJournal")
