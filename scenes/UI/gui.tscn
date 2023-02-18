@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgiqccc5156ph"]
+[gd_scene load_steps=7 format=3 uid="uid://cn8qoeltliptr"]
 
 [ext_resource type="Script" path="res://scripts/ui/gui.gd" id="1_fqq0c"]
 [ext_resource type="Texture2D" uid="uid://d4id8pw5svoy3" path="res://assets/textures/ui/crosshair.png" id="1_ku62e"]
+[ext_resource type="Texture2D" uid="uid://bgpitslcfgc5i" path="res://assets/textures/ui/clock_pixel.png" id="3_msxpb"]
+[ext_resource type="FontFile" uid="uid://dylm0soevjgn2" path="res://assets/fonts/PixelatedFont.otf" id="4_gr2d4"]
+[ext_resource type="FontFile" uid="uid://b07f28yn7icx3" path="res://assets/fonts/NormText.otf" id="6_83fef"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_geyxe"]
+load_path = "res://.godot/imported/pixel (1).png-215aa482137fdb2247fe6946b28f0648.ctex"
 
 [node name="GUI" type="CanvasLayer"]
 layer = 0
@@ -32,3 +38,98 @@ grow_vertical = 2
 mouse_filter = 2
 bbcode_enabled = true
 text = "[center]Test[/center]"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -162.0
+offset_top = 25.0
+offset_right = -25.0
+offset_bottom = 105.0
+grow_horizontal = 0
+mouse_filter = 2
+texture = ExtResource("3_msxpb")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_gr2d4")
+theme_override_font_sizes/font_size = 43
+text = "2:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Journal" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Journal"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -417.5
+offset_top = -338.0
+offset_right = 417.5
+offset_bottom = 338.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CompressedTexture2D_geyxe")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Left" type="RichTextLabel" parent="Journal"]
+layout_mode = 0
+offset_left = 314.0
+offset_top = 192.0
+offset_right = 581.0
+offset_bottom = 509.0
+theme_override_colors/default_color = Color(1, 0.941176, 0.92549, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/normal_font = ExtResource("6_83fef")
+bbcode_enabled = true
+text = "- Hello World!"
+
+[node name="Right" type="RichTextLabel" parent="Journal"]
+layout_mode = 0
+offset_left = 711.0
+offset_top = 192.0
+offset_right = 978.0
+offset_bottom = 509.0
+theme_override_colors/default_color = Color(1, 0.941176, 0.92549, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/normal_font = ExtResource("6_83fef")
+bbcode_enabled = true
+text = "- Hello x2 world!"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
