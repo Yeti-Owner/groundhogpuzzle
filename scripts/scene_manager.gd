@@ -7,7 +7,6 @@ extends Node
 
 var SceneToLoad: String
 var CurrentScene:Node
-#var HudMode:String = "none" setget _init_HUD
 var NextTransition:String
 var CurrentMode:String
 
@@ -15,6 +14,7 @@ func _ready():
 	Game.use_occlusion_culling = true
 
 func _change_scene(scene:String, type:String = "normal"):
+	# Room for new transitions later
 	match type:
 		"normal":
 			NextTransition = "fade_in"
@@ -37,3 +37,12 @@ func _reload_scene():
 func _fade_in():
 	if NextTransition != null:
 		TransitionPlayer.play(NextTransition)
+
+func _swap_hud(hud):
+	# Clear out old HUD/GUI
+	for child in HUD.get_children():
+		child.queue_free()
+	
+	var scene:PackedScene = load(hud)
+	var _scene:Node = scene.instantiate()
+	HUD.add_child(_scene)

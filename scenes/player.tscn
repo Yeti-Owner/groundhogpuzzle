@@ -5,8 +5,13 @@
 [ext_resource type="Script" path="res://scripts/InteractionRay.gd" id="3_bs74y"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_v6wlc"]
+radius = 0.446
+height = 1.839
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_way5y"]
+margin = 0.685
+radius = 0.446
+height = 1.839
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_nto1r")

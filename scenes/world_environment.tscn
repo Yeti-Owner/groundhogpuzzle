@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0xu0tqsev636"]
+
+[sub_resource type="Environment" id="Environment_f75it"]
+background_mode = 1
+background_color = Color(0.196078, 0.329412, 0.580392, 1)
+tonemap_mode = 3
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+volumetric_fog_enabled = true
+adjustment_enabled = true
+adjustment_saturation = 1.2
+
+[node name="WorldEnvironment" type="WorldEnvironment"]
+environment = SubResource("Environment_f75it")
