@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6vfy26j85b7v"]
+
+[ext_resource type="ArrayMesh" uid="uid://ctj2gwr54l31" path="res://assets/3dModels/Lamp.obj" id="1_8t7ia"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nruiu"]
+albedo_color = Color(0, 0.329412, 0.113725, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xseyd"]
+radius = 0.258
+height = 2.125
+
+[node name="Lamp" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.123, 0, 0, 0, 0.123, 0, 0, 0, 0.123, 0, 0, 0)
+mesh = ExtResource("1_8t7ia")
+surface_material_override/0 = SubResource("StandardMaterial3D_nruiu")
+surface_material_override/1 = SubResource("StandardMaterial3D_nruiu")
+surface_material_override/2 = SubResource("StandardMaterial3D_nruiu")
+surface_material_override/3 = SubResource("StandardMaterial3D_nruiu")
+surface_material_override/4 = SubResource("StandardMaterial3D_nruiu")
+surface_material_override/5 = SubResource("StandardMaterial3D_nruiu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_xseyd")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.07626, 0)
+omni_range = 2.77218
