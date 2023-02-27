@@ -7,9 +7,6 @@ const JUMP_VELOCITY = 4.5
 
 var gravity:float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-func _ready():
-	Engine.set_max_fps(120)
-
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():

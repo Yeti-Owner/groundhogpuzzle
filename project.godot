@@ -22,11 +22,13 @@ Eventbus="*res://scripts/Eventbus.gd"
 
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
+window/size/viewport_width=480
+window/size/viewport_height=270
 window/size/mode=3
 window/size/resizable=false
-window/size/borderless=true
+window/size/window_width_override=1920
+window/size/window_height_override=1080
+window/vsync/vsync_mode=3
 window/stretch/mode="viewport"
 
 [input]

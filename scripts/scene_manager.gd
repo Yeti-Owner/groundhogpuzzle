@@ -12,6 +12,8 @@ var CurrentMode:String
 
 func _ready():
 	Game.use_occlusion_culling = true
+#	Engine.set_max_fps(120)
+	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_MAILBOX)
 
 func _change_scene(scene:String, type:String = "normal"):
 	# Room for new transitions later

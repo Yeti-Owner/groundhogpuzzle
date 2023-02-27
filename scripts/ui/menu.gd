@@ -23,4 +23,3 @@ func _on_info_close_pressed():
 
 func _on_start_pressed():
 	SceneManager._change_scene("res://world.tscn")
-	SceneManager._swap_hud("res://scenes/UI/gui.tscn")

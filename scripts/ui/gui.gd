@@ -41,3 +41,6 @@ func _on_timer_timeout():
 	# Stop the timer when the time is up
 	if TimeLeft == 0:
 		$Timer.stop()
+
+func _on_temp_fps_timeout():
+	$Label.text = str(Performance.get_monitor(Performance.TIME_FPS))

@@ -38,17 +38,17 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 bbcode_enabled = true
-text = "[center]Test[/center]"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -162.0
+offset_left = -100.0
 offset_top = 25.0
-offset_right = -25.0
+offset_right = 37.0
 offset_bottom = 105.0
 grow_horizontal = 0
+scale = Vector2(0.532, 0.532)
 mouse_filter = 2
 texture = ExtResource("3_msxpb")
 expand_mode = 3
@@ -74,6 +74,7 @@ vertical_alignment = 1
 autostart = true
 
 [node name="Journal" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -85,15 +86,13 @@ script = ExtResource("5_80hnf")
 
 [node name="TextureRect" type="TextureRect" parent="Journal"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -417.5
-offset_top = -338.0
-offset_right = 417.5
-offset_bottom = 338.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 31.0
+offset_top = 68.0
+offset_right = -50.0
+offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("CompressedTexture2D_geyxe")
@@ -102,10 +101,10 @@ stretch_mode = 5
 
 [node name="Left" type="RichTextLabel" parent="Journal"]
 layout_mode = 0
-offset_left = 303.0
-offset_top = 192.0
-offset_right = 581.0
-offset_bottom = 509.0
+offset_left = 103.0
+offset_top = 97.0
+offset_right = 208.0
+offset_bottom = 218.0
 theme_override_colors/default_color = Color(1, 0.941176, 0.92549, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -118,10 +117,10 @@ bbcode_enabled = true
 
 [node name="Right" type="RichTextLabel" parent="Journal"]
 layout_mode = 0
-offset_left = 703.0
-offset_top = 192.0
-offset_right = 978.0
-offset_bottom = 509.0
+offset_left = 254.0
+offset_top = 97.0
+offset_right = 359.0
+offset_bottom = 218.0
 theme_override_colors/default_color = Color(1, 0.941176, 0.92549, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -132,4 +131,15 @@ theme_override_constants/outline_size = 1
 theme_override_fonts/normal_font = ExtResource("6_83fef")
 bbcode_enabled = true
 
+[node name="Label" type="Label" parent="."]
+offset_left = 31.0
+offset_top = 27.0
+offset_right = 148.0
+offset_bottom = 93.0
+
+[node name="TempFPS" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="TempFPS" to="." method="_on_temp_fps_timeout"]
