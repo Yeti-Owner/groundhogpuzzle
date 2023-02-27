@@ -20,6 +20,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_nsgh1")
+expand_mode = 2
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 1
@@ -28,12 +29,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -640.0
-offset_top = -310.0
-offset_right = -418.0
-offset_bottom = -272.0
+offset_left = -952.0
+offset_top = -227.0
+offset_right = -730.0
+offset_bottom = -189.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.97, 1.97)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 25
@@ -46,9 +48,11 @@ layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
 offset_left = 11.0
-offset_top = 179.0
+offset_top = -2.99998
 offset_right = 205.0
+offset_bottom = -182.0
 grow_vertical = 2
+scale = Vector2(1.378, 1.378)
 theme_override_constants/separation = 20
 alignment = 1
 
@@ -71,12 +75,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = -175.0
-offset_right = 250.0
-offset_bottom = 175.0
+offset_left = -463.0
+offset_top = -354.0
+offset_right = 37.0001
+offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(2.095, 2.095)
 
 [node name="ColorRect" type="ColorRect" parent="InfoPopup"]
 layout_mode = 1

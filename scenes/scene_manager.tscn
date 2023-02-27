@@ -104,9 +104,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+stretch = true
+stretch_shrink = 4
 
 [node name="HUD" type="Control" parent="GameScene"]
+custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 2
+mouse_filter = 1
 
 [node name="Game" type="SubViewport" parent="GameScene"]
 process_mode = 3
@@ -114,4 +118,5 @@ handle_input_locally = false
 scaling_3d_mode = 1
 audio_listener_enable_2d = true
 audio_listener_enable_3d = true
+size = Vector2i(480, 270)
 render_target_update_mode = 4
