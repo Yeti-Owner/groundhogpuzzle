@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://biw57xr802ddl"
+path="res://.godot/imported/AM152_008 Tlon Light 950 Ceiling_microprismatic.obj-324dd71d70d86921ffea5a51f3b468cc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/AM152_008 Tlon Light 950 Ceiling_microprismatic.obj-324dd71d70d86921ffea5a51f3b468cc.mesh"]
+
+source_file="res://assets/3dModels/AM152_008 Tlon Light 950 Ceiling_microprismatic.obj"
+dest_files=["res://.godot/imported/AM152_008 Tlon Light 950 Ceiling_microprismatic.obj-324dd71d70d86921ffea5a51f3b468cc.mesh", "res://.godot/imported/AM152_008 Tlon Light 950 Ceiling_microprismatic.obj-324dd71d70d86921ffea5a51f3b468cc.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

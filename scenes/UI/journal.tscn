@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://tedn03b48ukk"]
+
+[ext_resource type="Script" path="res://scenes/UI/Journal.gd" id="1_l0miw"]
+[ext_resource type="Theme" uid="uid://b7mbwsvb7sq7" path="res://resources/JournalTextTheme.tres" id="2_o0lid"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_geyxe"]
+load_path = "res://.godot/imported/pixel (1).png-215aa482137fdb2247fe6946b28f0648.ctex"
+
+[node name="Journal" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_l0miw")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 254.0
+offset_top = 135.0
+offset_right = -200.0
+offset_bottom = -79.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CompressedTexture2D_geyxe")
+stretch_mode = 5
+
+[node name="LeftPage" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 395.0
+offset_top = 271.0
+offset_right = -1045.0
+offset_bottom = -253.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_o0lid")
+
+[node name="Left" type="RichTextLabel" parent="LeftPage"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Test Hello"
+
+[node name="RightPage" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1095.0
+offset_top = 271.0
+offset_right = -345.0
+offset_bottom = -253.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_o0lid")
+
+[node name="Right" type="RichTextLabel" parent="RightPage"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Test Hello"

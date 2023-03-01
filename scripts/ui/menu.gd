@@ -23,3 +23,6 @@ func _on_info_close_pressed():
 
 func _on_start_pressed():
 	SceneManager._change_scene("res://world.tscn")
+
+func _on_quit_pressed():
+	get_tree().quit()

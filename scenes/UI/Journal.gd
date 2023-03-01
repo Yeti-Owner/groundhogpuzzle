@@ -1,7 +1,7 @@
 extends Control
 
-@onready var Left := $Left
-@onready var Right := $Right
+@onready var LeftText := $LeftPage/Left
+@onready var RightText := $RightPage/Right
 
 var limit := 3
 var list1 := []
@@ -13,12 +13,12 @@ func _ready():
 	Eventbus.UpdatedJournal.connect(_update_journal)
 
 func _update_journal():
-	for str in Eventbus.JournalEntries:
-		if Eventbus.JournalEntries[str] < limit:
-			if str not in list1: list1.append(str)
+	for line in Eventbus.JournalEntries:
+		if Eventbus.JournalEntries[line] < limit:
+			if line not in list1: list1.append(line)
 			continue
 		else:
-			if str not in list1: list2.append(str)
+			if line not in list1: list2.append(line)
 			continue
 	
 	formatted_text = ""
@@ -28,5 +28,5 @@ func _update_journal():
 	for string in list2:
 		formatted_text2 += string + "\n"
 	
-	Left.set_text(formatted_text)
-	Right.set_text(formatted_text2)
+	LeftText.set_text(formatted_text)
+	RightText.set_text(formatted_text2)

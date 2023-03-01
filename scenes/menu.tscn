@@ -131,4 +131,5 @@ autowrap_mode = 2
 
 [connection signal="pressed" from="VBoxContainer/Info" to="." method="_on_info_pressed"]
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="InfoPopup/InfoClose" to="." method="_on_info_close_pressed"]

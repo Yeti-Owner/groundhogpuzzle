@@ -31,6 +31,7 @@ func _set_interaction(icon, text):
 func _on_timer_timeout():
 	# Update the time left and the label text
 	TimeLeft -= 1
+	@warning_ignore("integer_division")
 	var minutes = int(TimeLeft / 60)
 	var seconds = TimeLeft % 60
 	var seconds_string = str(seconds)
