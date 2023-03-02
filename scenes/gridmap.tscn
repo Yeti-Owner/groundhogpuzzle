@@ -1,31 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://cfk4sysa0svgo"]
+[gd_scene load_steps=7 format=3 uid="uid://cfk4sysa0svgo"]
 
 [ext_resource type="PackedScene" uid="uid://chjo0o1tk041t" path="res://scenes/buildingblocks/1_wall.tscn" id="1_8p4r5"]
 [ext_resource type="PackedScene" uid="uid://oogsjqempntp" path="res://scenes/buildingblocks/1_floor.tscn" id="2_jtehl"]
 [ext_resource type="PackedScene" uid="uid://donun1ecpnspd" path="res://scenes/buildingblocks/1_roof.tscn" id="3_wtsa1"]
 [ext_resource type="PackedScene" uid="uid://b2367ynxy4ied" path="res://scenes/buildingblocks/1_angled_floor.tscn" id="4_6b6dx"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aq8av"]
-albedo_color = Color(0.619608, 0, 0.0431373, 1)
-backlight_enabled = true
-
-[sub_resource type="PrismMesh" id="PrismMesh_f60ah"]
-lightmap_size_hint = Vector2i(14, 21)
-material = SubResource("StandardMaterial3D_aq8av")
-add_uv2 = true
-left_to_right = 1.0
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_q5ses"]
-points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nh2mb"]
-albedo_color = Color(0.137255, 0.478431, 0.4, 1)
-
-[sub_resource type="PrismMesh" id="PrismMesh_lawxw"]
-lightmap_size_hint = Vector2i(14, 21)
-material = SubResource("StandardMaterial3D_nh2mb")
-add_uv2 = true
-left_to_right = 1.0
+[ext_resource type="PackedScene" uid="uid://c255pn1kicn8p" path="res://scenes/buildingblocks/1_angled_wall.tscn" id="4_jfgqj"]
+[ext_resource type="PackedScene" uid="uid://blhucu0corqvi" path="res://scenes/buildingblocks/1_angled_roof.tscn" id="6_ftntb"]
 
 [node name="gridmap" type="Node"]
 
@@ -37,25 +17,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
 [node name="roof" parent="." instance=ExtResource("3_wtsa1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
 
-[node name="angled_wall" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.03294, 0, 0)
-gi_lightmap_scale = 1
-mesh = SubResource("PrismMesh_f60ah")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="angled_wall"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="angled_wall/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_q5ses")
+[node name="angled_wall" parent="." instance=ExtResource("4_jfgqj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
 
 [node name="angled_floor" parent="." instance=ExtResource("4_6b6dx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
 
-[node name="angled_roof" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.0329, 0, 0)
-gi_lightmap_scale = 1
-mesh = SubResource("PrismMesh_lawxw")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="angled_roof"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="angled_roof/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_q5ses")
+[node name="angled_roof" parent="." instance=ExtResource("6_ftntb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)

@@ -1,32 +1,30 @@
 extends Control
 
-@onready var LeftText := $LeftPage/Left
 @onready var RightText := $RightPage/Right
+@onready var Left := $LeftPage
 
-var limit := 3
-var list1 := []
-var list2 := []
-var formatted_text := ""
-var formatted_text2 := ""
+var CurrentPage:int = 0
 
 func _ready():
 	Eventbus.UpdatedJournal.connect(_update_journal)
+	_update_journal()
+
+func _next_page():
+	CurrentPage = min(CurrentPage + 1, Eventbus.JournalEntries.size() - 1)
+	_update_journal()
+
+func _last_page():
+	CurrentPage = max(CurrentPage - 1, -1)
+	_update_journal()
 
 func _update_journal():
-	for line in Eventbus.JournalEntries:
-		if Eventbus.JournalEntries[line] < limit:
-			if line not in list1: list1.append(line)
-			continue
-		else:
-			if line not in list1: list2.append(line)
-			continue
+	match Eventbus.JournalEntries[CurrentPage]:
+		"journal":
+			var page:PackedScene = load("res://scenes/journalpages/page_1.tscn")
+			var _page:Node = page.instantiate()
+			Left.add_child(_page)
+			RightText.text = "- Time machine trial #09124\n- Subject's vitals seem alright ig"
+		"audio":
+			pass
 	
-	formatted_text = ""
-	for string in list1:
-		formatted_text += string + "\n"
-	formatted_text2 = ""
-	for string in list2:
-		formatted_text2 += string + "\n"
 	
-	LeftText.set_text(formatted_text)
-	RightText.set_text(formatted_text2)

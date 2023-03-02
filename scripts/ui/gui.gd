@@ -3,7 +3,7 @@ extends CanvasLayer
 @onready var InteractionLabel := $InteractionText
 @onready var InteractIcon := $CenterContainer/crosshair
 @onready var Clock := $TextureRect/Label
-@onready var Journal := $Journal
+#@onready var Journal := $Journal
 
 var TimeLeft:int = 120
 
@@ -11,11 +11,14 @@ var averageframes:Array
 
 func _ready():
 	Eventbus.interaction.connect(_set_interaction)
-	Journal.visible = false
+	Eventbus.JournalCollected.connect(_add_journal)
+#	Journal.visible = false
 
 func _process(_delta) -> void:
-	if Input.is_action_just_pressed("journal"):
-		Journal.visible = !Journal.visible
+	if Input.is_action_just_pressed("journal") and Eventbus.FoundJournal:
+		get_node("Journal").visible = !get_node("Journal").visible
+		if Input.get_mouse_mode() == 0: Input.set_mouse_mode(2)
+		else: Input.set_mouse_mode(0)
 
 func _set_interaction(icon, text):
 	if icon == null:
@@ -29,6 +32,11 @@ func _set_interaction(icon, text):
 	else:
 		InteractionLabel.set_text(text)
 		InteractionLabel.set_visible(true)
+
+func _add_journal():
+	var journal:PackedScene = load("res://scenes/UI/journal.tscn")
+	var _journal:Node = journal.instantiate()
+	self.add_child(_journal)
 
 func _on_timer_timeout():
 	# Update the time left and the label text
@@ -51,7 +59,7 @@ func _on_timer_2_timeout():
 	averageframes.append(frames)
 
 func _on_timer_3_timeout():
-	$Timer2.stop()
+#	$Timer2.stop()
 	var total:int = 0
 	for value in averageframes:
 		total += value

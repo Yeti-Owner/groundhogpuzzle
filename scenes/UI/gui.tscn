@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cn8qoeltliptr"]
+[gd_scene load_steps=5 format=3 uid="uid://cn8qoeltliptr"]
 
 [ext_resource type="Script" path="res://scripts/ui/gui.gd" id="1_fqq0c"]
 [ext_resource type="Texture2D" uid="uid://d4id8pw5svoy3" path="res://assets/textures/ui/crosshair.png" id="1_ku62e"]
 [ext_resource type="Texture2D" uid="uid://bgpitslcfgc5i" path="res://assets/textures/ui/clock_pixel.png" id="3_msxpb"]
 [ext_resource type="FontFile" uid="uid://dylm0soevjgn2" path="res://assets/fonts/PixelatedFont.otf" id="4_gr2d4"]
-[ext_resource type="PackedScene" uid="uid://tedn03b48ukk" path="res://scenes/UI/journal.tscn" id="5_cveo5"]
 
 [node name="GUI" type="CanvasLayer"]
 layer = 0
@@ -68,8 +67,6 @@ vertical_alignment = 1
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
-
-[node name="Journal" parent="." instance=ExtResource("5_cveo5")]
 
 [node name="Label" type="Label" parent="."]
 offset_left = 63.0

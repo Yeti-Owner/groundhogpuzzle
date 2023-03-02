@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://tedn03b48ukk"]
+[gd_scene load_steps=5 format=3 uid="uid://tedn03b48ukk"]
 
 [ext_resource type="Script" path="res://scenes/UI/Journal.gd" id="1_l0miw"]
 [ext_resource type="Theme" uid="uid://b7mbwsvb7sq7" path="res://resources/JournalTextTheme.tres" id="2_o0lid"]
+[ext_resource type="Texture2D" uid="uid://3xdml3c3nvt3" path="res://assets/textures/ui/arrow.png" id="3_x88xt"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_geyxe"]
 load_path = "res://.godot/imported/pixel (1).png-215aa482137fdb2247fe6946b28f0648.ctex"
 
 [node name="Journal" type="Control"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -43,11 +45,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_o0lid")
 
-[node name="Left" type="RichTextLabel" parent="LeftPage"]
-layout_mode = 2
-bbcode_enabled = true
-text = "Test Hello"
-
 [node name="RightPage" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -65,3 +62,35 @@ theme = ExtResource("2_o0lid")
 layout_mode = 2
 bbcode_enabled = true
 text = "Test Hello"
+
+[node name="ForwardArrow" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1589.0
+offset_top = 889.0
+offset_right = -267.0
+offset_bottom = -146.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_x88xt")
+stretch_mode = 4
+
+[node name="BackwardArrow" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 321.0
+offset_top = 889.0
+offset_right = -1535.0
+offset_bottom = -146.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_x88xt")
+stretch_mode = 4
+flip_h = true
+
+[connection signal="pressed" from="ForwardArrow" to="." method="_next_page"]
+[connection signal="pressed" from="BackwardArrow" to="." method="_last_page"]
