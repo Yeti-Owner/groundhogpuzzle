@@ -7,6 +7,8 @@ extends CanvasLayer
 
 var TimeLeft:int = 120
 
+var averageframes:Array
+
 func _ready():
 	Eventbus.interaction.connect(_set_interaction)
 	Journal.visible = false
@@ -42,3 +44,15 @@ func _on_timer_timeout():
 	# Stop the timer when the time is up
 	if TimeLeft == 0:
 		$Timer.stop()
+
+func _on_timer_2_timeout():
+	var frames = Performance.get_monitor(Performance.TIME_FPS)
+	$Label.text = str(frames)
+	averageframes.append(frames)
+
+func _on_timer_3_timeout():
+	$Timer2.stop()
+	var total:int = 0
+	for value in averageframes:
+		total += value
+	print(str(total/averageframes.size()))

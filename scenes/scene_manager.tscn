@@ -115,6 +115,8 @@ mouse_filter = 1
 [node name="Game" type="SubViewport" parent="GameScene"]
 process_mode = 3
 handle_input_locally = false
+use_occlusion_culling = true
+mesh_lod_threshold = 50.0
 scaling_3d_mode = 1
 audio_listener_enable_2d = true
 audio_listener_enable_3d = true
