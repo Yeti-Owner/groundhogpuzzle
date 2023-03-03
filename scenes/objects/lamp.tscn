@@ -29,6 +29,6 @@ shape = SubResource("CapsuleShape3D_xseyd")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.076, 0)
-light_energy = 0.369
-omni_range = 6.717
+light_energy = 0.217
+omni_range = 6.41
 omni_attenuation = 2.0
