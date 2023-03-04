@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnsl4540jixes"]
+
+[ext_resource type="Script" path="res://interactable/journal_pickup.gd" id="1_jnsx3"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_h0nr2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tglh7"]
+
+[node name="JournalPickup" type="StaticBody3D"]
+collision_layer = 3
+script = ExtResource("1_jnsx3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("BoxMesh_h0nr2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("BoxShape3D_tglh7")

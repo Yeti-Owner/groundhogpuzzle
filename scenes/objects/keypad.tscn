@@ -1,0 +1,221 @@
+[gd_scene load_steps=8 format=3 uid="uid://bamiph2j84wbq"]
+
+[ext_resource type="Script" path="res://scripts/keypad.gd" id="1_m738p"]
+[ext_resource type="Script" path="res://interactable/KeypadNumbers.gd" id="1_rt0nd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ui2j"]
+albedo_color = Color(0.407843, 0.407843, 0.407843, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_autkn"]
+material = SubResource("StandardMaterial3D_4ui2j")
+size = Vector3(0.4, 0.5, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rif6v"]
+size = Vector3(0.1, 0.1, 0.025)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0qyek"]
+points = PackedVector3Array(0.05, 0.05, 0.0125, 0.05, 0.05, -0.0125, -0.05, 0.05, 0.0125, 0.05, -0.05, 0.0125, 0.05, -0.05, -0.0125, -0.05, 0.05, -0.0125, -0.05, -0.05, 0.0125, -0.05, -0.05, -0.0125)
+
+[sub_resource type="BoxMesh" id="BoxMesh_njx0u"]
+size = Vector3(0.35, 0.095, 0.025)
+
+[node name="Keypad" type="Node3D"]
+script = ExtResource("1_m738p")
+
+[node name="Base" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_autkn")
+
+[node name="Buttons" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0332391, 0)
+
+[node name="Seven" type="StaticBody3D" parent="Buttons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125, 0.0416969, 0.043)
+collision_layer = 2
+script = ExtResource("1_rt0nd")
+Num = 7
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Buttons/Seven"]
+mesh = SubResource("BoxMesh_rif6v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buttons/Seven"]
+shape = SubResource("ConvexPolygonShape3D_0qyek")
+
+[node name="Label3D" type="Label3D" parent="Buttons/Seven"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0147481)
+shaded = true
+double_sided = false
+text = "7"
+font_size = 16
+outline_size = 11
+
+[node name="Eight" type="StaticBody3D" parent="Buttons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0416969, 0.043)
+collision_layer = 2
+script = ExtResource("1_rt0nd")
+Num = 8
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Buttons/Eight"]
+mesh = SubResource("BoxMesh_rif6v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buttons/Eight"]
+shape = SubResource("ConvexPolygonShape3D_0qyek")
+
+[node name="Label3D" type="Label3D" parent="Buttons/Eight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0147481)
+shaded = true
+double_sided = false
+text = "8"
+font_size = 16
+outline_size = 11
+
+[node name="Nine" type="StaticBody3D" parent="Buttons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125, 0.0416969, 0.043)
+collision_layer = 2
+script = ExtResource("1_rt0nd")
+Num = 9
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Buttons/Nine"]
+mesh = SubResource("BoxMesh_rif6v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buttons/Nine"]
+shape = SubResource("ConvexPolygonShape3D_0qyek")
+
+[node name="Label3D" type="Label3D" parent="Buttons/Nine"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0147481)
+shaded = true
+double_sided = false
+text = "9"
+font_size = 16
+outline_size = 11
+
+[node name="Four" type="StaticBody3D" parent="Buttons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125, -0.0833031, 0.043)
+collision_layer = 2
+script = ExtResource("1_rt0nd")
+Num = 4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Buttons/Four"]
+mesh = SubResource("BoxMesh_rif6v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buttons/Four"]
+shape = SubResource("ConvexPolygonShape3D_0qyek")
+
+[node name="Label3D" type="Label3D" parent="Buttons/Four"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0147481)
+shaded = true
+double_sided = false
+text = "4"
+font_size = 16
+outline_size = 11
+
+[node name="Five" type="StaticBody3D" parent="Buttons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0833031, 0.043)
+collision_layer = 2
+script = ExtResource("1_rt0nd")
+Num = 5
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Buttons/Five"]
+mesh = SubResource("BoxMesh_rif6v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buttons/Five"]
+shape = SubResource("ConvexPolygonShape3D_0qyek")
+
+[node name="Label3D" type="Label3D" parent="Buttons/Five"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0147481)
+shaded = true
+double_sided = false
+text = "5"
+font_size = 16
+outline_size = 11
+
+[node name="Six" type="StaticBody3D" parent="Buttons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125, -0.0833031, 0.043)
+collision_layer = 2
+script = ExtResource("1_rt0nd")
+Num = 6
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Buttons/Six"]
+mesh = SubResource("BoxMesh_rif6v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buttons/Six"]
+shape = SubResource("ConvexPolygonShape3D_0qyek")
+
+[node name="Label3D" type="Label3D" parent="Buttons/Six"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0147481)
+shaded = true
+double_sided = false
+text = "6"
+font_size = 16
+outline_size = 11
+
+[node name="One" type="StaticBody3D" parent="Buttons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125, -0.208303, 0.043)
+collision_layer = 2
+script = ExtResource("1_rt0nd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Buttons/One"]
+mesh = SubResource("BoxMesh_rif6v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buttons/One"]
+shape = SubResource("ConvexPolygonShape3D_0qyek")
+
+[node name="Label3D" type="Label3D" parent="Buttons/One"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0147481)
+shaded = true
+double_sided = false
+text = "1"
+font_size = 16
+outline_size = 11
+
+[node name="Two" type="StaticBody3D" parent="Buttons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.208303, 0.043)
+collision_layer = 2
+script = ExtResource("1_rt0nd")
+Num = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Buttons/Two"]
+mesh = SubResource("BoxMesh_rif6v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buttons/Two"]
+shape = SubResource("ConvexPolygonShape3D_0qyek")
+
+[node name="Label3D" type="Label3D" parent="Buttons/Two"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0147481)
+shaded = true
+double_sided = false
+text = "2"
+font_size = 16
+outline_size = 11
+
+[node name="Three" type="StaticBody3D" parent="Buttons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125, -0.208303, 0.043)
+collision_layer = 2
+script = ExtResource("1_rt0nd")
+Num = 3
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Buttons/Three"]
+mesh = SubResource("BoxMesh_rif6v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buttons/Three"]
+shape = SubResource("ConvexPolygonShape3D_0qyek")
+
+[node name="Label3D" type="Label3D" parent="Buttons/Three"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0147481)
+shaded = true
+double_sided = false
+text = "3"
+font_size = 16
+outline_size = 11
+
+[node name="Screen" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.189061, 0.0428531)
+mesh = SubResource("BoxMesh_njx0u")
+
+[node name="Text" type="Label3D" parent="Screen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.161, 0, 0.015)
+shaded = true
+double_sided = false
+text = "3879498"
+font_size = 16
+outline_size = 11
+horizontal_alignment = 0
