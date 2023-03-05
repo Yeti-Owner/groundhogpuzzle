@@ -6,6 +6,7 @@ extends Control
 var CurrentPage:int = 0
 
 func _ready():
+	self.visible = false
 	Eventbus.UpdatedJournal.connect(_update_journal)
 	_update_journal()
 

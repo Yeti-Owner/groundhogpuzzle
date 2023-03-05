@@ -29,6 +29,8 @@ script = ExtResource("2_g1suc")
 [node name="Camera" type="Camera3D" parent="CameraHolder"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.632488, -0.184849)
 current = true
+fov = 80.0
+size = 0.644
 
 [node name="InteractionRay" type="RayCast3D" parent="CameraHolder/Camera"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.248519)

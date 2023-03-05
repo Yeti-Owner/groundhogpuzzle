@@ -2,10 +2,13 @@ extends CharacterBody3D
 
 @onready var _camera := $CameraHolder
 
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+const SPEED := 5.0
+const JUMP_VELOCITY := 4.5
 
 var gravity:float = ProjectSettings.get_setting("physics/3d/default_gravity")
+
+func _ready():
+	Eventbus.NewLoop.connect(_new_loop)
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -26,3 +29,21 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	
 	move_and_slide()
+
+func _new_loop():
+	set_physics_process(false)
+	var LoopAnim:PackedScene = load("res://scenes/timeloop.tscn")
+	var _LoopAnim:Node = LoopAnim.instantiate()
+	self.add_child(_LoopAnim)
+	
+	var Temptimer := Timer.new()
+	self.add_child(Temptimer)
+	Temptimer.wait_time = 3
+	Temptimer.connect("timeout", _temp_timer)
+	Temptimer.one_shot = true
+	Temptimer.start()
+
+func _temp_timer():
+	var tween := get_tree().create_tween()
+	tween.tween_property($CameraHolder/Camera, "fov", 10, 3).set_trans(Tween.TRANS_LINEAR)
+	
