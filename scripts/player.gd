@@ -46,4 +46,7 @@ func _new_loop():
 func _temp_timer():
 	var tween := get_tree().create_tween()
 	tween.tween_property($CameraHolder/Camera, "fov", 10, 3).set_trans(Tween.TRANS_LINEAR)
-	
+	tween.connect("finished", _restart)
+
+func _restart():
+	print("_restart() called")
