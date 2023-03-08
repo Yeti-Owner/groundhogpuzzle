@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bo7qr0ot51j7g"]
+
+[ext_resource type="Script" path="res://interactable/stickynote.gd" id="1_g1txe"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_jro5j"]
+size = Vector2(0.56, 0.666)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_q4bpo"]
+points = PackedVector3Array(-0.28, -0.333, 0, 0.28, -0.333, 0, -0.28, 0.333, 0, 0.28, 0.333, 0)
+
+[node name="Stickynote" type="StaticBody3D"]
+collision_layer = 2
+script = ExtResource("1_g1txe")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.991445, 0.130526, 0, -0.130526, 0.991445, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("QuadMesh_jro5j")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.991445, 0.130526, 0, -0.130526, 0.991445, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_q4bpo")
