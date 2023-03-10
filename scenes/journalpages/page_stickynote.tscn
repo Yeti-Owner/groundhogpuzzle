@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bgdqi580avfvp" path="res://assets/textures/StickyNote.png" id="1_l7bg8"]
 
-[node name="Page stickynote" type="VBoxContainer"]
+[node name="PageStickynote" type="VBoxContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

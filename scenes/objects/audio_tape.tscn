@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7ggtjg60yrub"]
+
+[ext_resource type="Script" path="res://interactable/audio_tape.gd" id="1_r4ts8"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_oot30"]
+size = Vector3(0.478, 0.265, 0.11)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_su7m5"]
+points = PackedVector3Array(0.239, 0.1325, 0.055, 0.239, 0.1325, -0.055, -0.239, 0.1325, 0.055, 0.239, -0.1325, 0.055, 0.239, -0.1325, -0.055, -0.239, 0.1325, -0.055, -0.239, -0.1325, 0.055, -0.239, -0.1325, -0.055)
+
+[node name="AudioTape" type="StaticBody3D"]
+collision_layer = 2
+script = ExtResource("1_r4ts8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.055, 0)
+mesh = SubResource("BoxMesh_oot30")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.055, 0)
+shape = SubResource("ConvexPolygonShape3D_su7m5")

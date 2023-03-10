@@ -4,6 +4,7 @@
 
 [resource]
 default_font = ExtResource("1_ggqrs")
+default_font_size = 16
 RichTextLabel/colors/default_color = Color(1, 0.941176, 0.92549, 1)
 RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
 RichTextLabel/colors/font_shadow_color = Color(0, 0, 0, 1)
