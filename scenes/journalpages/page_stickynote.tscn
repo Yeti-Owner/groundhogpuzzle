@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://bifhwpks1gvra"]
+[gd_scene load_steps=2 format=3 uid="uid://bifhwpks1gvra"]
+
+[ext_resource type="Texture2D" uid="uid://bgdqi580avfvp" path="res://assets/textures/StickyNote.png" id="1_l7bg8"]
 
 [node name="Page stickynote" type="VBoxContainer"]
 anchors_preset = 15
@@ -7,6 +9,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 2
-text = "boppity boopity, ayy"
+texture = ExtResource("1_l7bg8")
+expand_mode = 4
+stretch_mode = 5
