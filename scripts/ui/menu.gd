@@ -26,3 +26,6 @@ func _on_start_pressed():
 
 func _on_quit_pressed():
 	get_tree().quit()
+
+func _on_poll_pressed():
+	SceneManager._swap_hud("res://scenes/poll.tscn")
