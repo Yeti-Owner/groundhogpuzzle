@@ -9,9 +9,9 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6hl21"]
 shader = ExtResource("5_hxker")
 shader_parameter/crt_curve = 0.013
-shader_parameter/crt_scan_line_color = 0.19
-shader_parameter/aperture_grille_rate = 0.562
-shader_parameter/rf_switch_esque_blur = 0.0
+shader_parameter/crt_scan_line_color = 0.114
+shader_parameter/aperture_grille_rate = 1.0
+shader_parameter/rf_switch_esque_blur = 0.553
 shader_parameter/white_noise_rate = 0.041
 
 [node name="GUI" type="CanvasLayer"]
