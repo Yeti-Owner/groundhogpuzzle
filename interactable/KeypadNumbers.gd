@@ -4,7 +4,7 @@ extends Interactable
 @onready var Keypad := get_parent().get_parent()
 
 func get_interaction_text():
-	return "[center]Press E to enter [color=blue]%s[/color][/center]" % Num
+	return "[center]Press E to enter [color=ROYAL_BLUE]%s[/color][/center]" % Num
 
 func get_interaction_icon():
 	return "res://assets/textures/ui/action.png"

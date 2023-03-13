@@ -1,10 +1,7 @@
 extends Control
 
-var LastNode
-
-#var uid := 867142
+var LastNode:NodePath
 var url := "https://eoc51iyh2mrie8h.m.pipedream.net"
-#var data_to_send := {'string': "test1", 'integer': 1}
 
 func _make_post_request(_url, data_to_send):
 	# Convert data to json string:
@@ -22,7 +19,5 @@ func _on_submit_pressed():
 		if child.get_class() == "Label":
 			i += 1
 			Order[i] = child.text
-	
-#	print(Order)
 	
 	_make_post_request(url, Order)

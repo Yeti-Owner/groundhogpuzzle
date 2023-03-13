@@ -1,12 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://cn8qoeltliptr"]
+[gd_scene load_steps=7 format=3 uid="uid://cn8qoeltliptr"]
 
 [ext_resource type="Script" path="res://scripts/ui/gui.gd" id="1_fqq0c"]
 [ext_resource type="Texture2D" uid="uid://d4id8pw5svoy3" path="res://assets/textures/ui/crosshair.png" id="1_ku62e"]
 [ext_resource type="Texture2D" uid="uid://bgpitslcfgc5i" path="res://assets/textures/ui/clock_pixel.png" id="3_msxpb"]
 [ext_resource type="FontFile" uid="uid://dylm0soevjgn2" path="res://assets/fonts/PixelatedFont.otf" id="4_gr2d4"]
+[ext_resource type="Shader" path="res://resources/CRT_Shader.gdshader" id="5_hxker"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6hl21"]
+shader = ExtResource("5_hxker")
+shader_parameter/crt_curve = 0.013
+shader_parameter/crt_scan_line_color = 0.19
+shader_parameter/aperture_grille_rate = 0.562
+shader_parameter/rf_switch_esque_blur = 0.0
+shader_parameter/white_noise_rate = 0.041
 
 [node name="GUI" type="CanvasLayer"]
-layer = 0
+layer = 2
 script = ExtResource("1_fqq0c")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
@@ -69,6 +78,7 @@ vertical_alignment = 1
 autostart = true
 
 [node name="FramerateLabel" type="Label" parent="."]
+visible = false
 offset_left = 63.0
 offset_top = 44.0
 offset_right = 137.0
@@ -79,6 +89,18 @@ text = "2134"
 [node name="FramerateTimer" type="Timer" parent="."]
 wait_time = 0.1
 autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="VHS" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_6hl21")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="FramerateTimer" to="." method="_on_framerate_timeout"]

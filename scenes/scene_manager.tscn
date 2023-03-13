@@ -1,6 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4aclt0j3mowm"]
+[gd_scene load_steps=8 format=3 uid="uid://c4aclt0j3mowm"]
 
 [ext_resource type="Script" path="res://scripts/scene_manager.gd" id="1_hn3y2"]
+[ext_resource type="Shader" path="res://resources/CRT_Shader.gdshader" id="2_ravop"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cxnl0"]
+shader = ExtResource("2_ravop")
+shader_parameter/crt_curve = 0.013
+shader_parameter/crt_scan_line_color = 0.19
+shader_parameter/aperture_grille_rate = 0.562
+shader_parameter/rf_switch_esque_blur = 1.0
+shader_parameter/white_noise_rate = 0.041
 
 [sub_resource type="Animation" id="Animation_jyvu6"]
 length = 0.001
@@ -73,6 +82,7 @@ _data = {
 script = ExtResource("1_hn3y2")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 4
 
 [node name="Transitions" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -92,6 +102,17 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="CanvasLayer"]
+
+[node name="VHS" type="ColorRect" parent="CanvasLayer/CanvasLayer"]
+material = SubResource("ShaderMaterial_cxnl0")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="TransitionPlayer" type="AnimationPlayer" parent="."]
 libraries = {

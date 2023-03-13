@@ -30,6 +30,11 @@ window/size/window_width_override=1920
 window/size/window_height_override=1080
 window/vsync/vsync_mode=3
 
+[editor]
+
+movie_writer/mjpeg_quality=1.0
+movie_writer/movie_file="C:/Users/calro/Videos/VHS.avi"
+
 [input]
 
 forward={

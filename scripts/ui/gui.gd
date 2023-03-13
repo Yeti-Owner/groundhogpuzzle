@@ -7,6 +7,7 @@ extends CanvasLayer
 var TimeLeft:int = 120 # Time in seconds
 
 func _ready():
+	Engine.set_max_fps(60)
 	Eventbus.interaction.connect(_set_interaction)
 	Eventbus.JournalCollected.connect(_add_journal)
 
