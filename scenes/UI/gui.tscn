@@ -77,19 +77,6 @@ vertical_alignment = 1
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
-[node name="FramerateLabel" type="Label" parent="."]
-visible = false
-offset_left = 63.0
-offset_top = 44.0
-offset_right = 137.0
-offset_bottom = 80.0
-scale = Vector2(2.199, 2.199)
-text = "2134"
-
-[node name="FramerateTimer" type="Timer" parent="."]
-wait_time = 0.1
-autostart = true
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 3
 
@@ -103,4 +90,3 @@ grow_vertical = 2
 mouse_filter = 2
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="FramerateTimer" to="." method="_on_framerate_timeout"]

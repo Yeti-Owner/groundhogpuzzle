@@ -49,6 +49,3 @@ func _on_timer_timeout():
 	if TimeLeft == 0:
 		Eventbus.emit_signal("NewLoop")
 		$Timer.stop()
-
-func _on_framerate_timeout():
-	$FramerateLabel.text = str(Performance.get_monitor(Performance.TIME_FPS))

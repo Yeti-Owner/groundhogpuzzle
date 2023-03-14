@@ -27,7 +27,7 @@ func _update_journal():
 	# Add new page + text
 	match Eventbus.JournalEntries[CurrentPage]:
 		"journal":
-			_set_page(load("res://scenes/journalpages/page_1.tscn"), "[center]Entry #1, Order of Events[/center]")
+			_set_page(load("res://scenes/journalpages/page_1.tscn"), "[center]Entry #1, Order of Events[/center]\n \n1. Disengage locking mechanisms.\n2. Engage safety protocols.\n3. Insert Parallax Reducer.\n4. Enter a case number.\n5. Power on and record results to this book.")
 		"audio":
 			_set_page(load("res://scenes/journalpages/page_audio.tscn"), "[center]Transcription of Audio Recording:[/center]\n \n[font_size=14][color=AQUA]Hey Greg, what's the point of this again?[/color]\n[color=green]The recordings or the experiment?[/color]\n[color=AQUA ]The experiment. I think there's too much room for error here.[/color]\n[color=green]It'll be find... Mind passing me the South then North, please?[/color]\n[color=AQUA]Sure thing. Even scientifically isn't this wrong?[/color]\n[color=green]I prefer not to think about it. Just focus on the paycheck and the history books.[/color]\n[color=AQUA]I hear ya... Need West and Eat now?[/color]\n[color=green]Other way around but yes please.[/color][/font_size]\n \n[center]End of recording[/center]")
 		"note":
