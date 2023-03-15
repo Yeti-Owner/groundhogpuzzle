@@ -47,7 +47,7 @@ func _new_loop():
 func _ending_anim():
 	# Shrinks FOV basically
 	var tween := get_tree().create_tween()
-	tween.tween_property($CameraHolder/Camera, "fov", 10, 2).set_trans(Tween.TRANS_LINEAR)
+	tween.tween_property($CameraHolder/Camera, "fov", 2, 3).set_trans(Tween.TRANS_LINEAR)
 	tween.connect("finished", _restart)
 
 # When ending animation is done this is called

@@ -7,3 +7,4 @@ signal NewLoop
 
 var JournalEntries:Array = []
 var FoundJournal:bool = false
+var ParallaxReducer:bool = false
