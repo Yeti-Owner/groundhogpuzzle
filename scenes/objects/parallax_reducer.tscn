@@ -1,57 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://d36ax3dndsddb"]
+[gd_scene load_steps=4 format=3 uid="uid://d36ax3dndsddb"]
 
 [ext_resource type="Script" path="res://interactable/parallax_reducer.gd" id="1_i74jf"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_sl100"]
-top_radius = 0.2
-bottom_radius = 0.2
-height = 1.4
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_mnf3t"]
-top_radius = 0.1
-bottom_radius = 0.1
-height = 0.4
+top_radius = 0.15
+bottom_radius = 0.15
+height = 1.1
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_cykxi"]
-height = 1.4
-radius = 0.2
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_eaqvu"]
-height = 0.4
-radius = 0.1
+height = 1.1
+radius = 0.15
 
 [node name="ParallaxReducer" type="StaticBody3D"]
 collision_layer = 2
 script = ExtResource("1_i74jf")
 
 [node name="Base" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 0, 0.225, 0.025)
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 0, 0.075, 0)
 mesh = SubResource("CylinderMesh_sl100")
 
-[node name="Outcrop1" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.5, 0.225, -0.275)
-mesh = SubResource("CylinderMesh_mnf3t")
-
-[node name="Outcrop2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.225, -0.275)
-mesh = SubResource("CylinderMesh_mnf3t")
-
-[node name="Outcrop3" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.5, 0.225, -0.275)
-mesh = SubResource("CylinderMesh_mnf3t")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0.225, 0.025)
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0.075, 0)
 shape = SubResource("CylinderShape3D_cykxi")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.5, 0.225, -0.275)
-shape = SubResource("CylinderShape3D_eaqvu")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.5, 0.225, -0.275)
-shape = SubResource("CylinderShape3D_eaqvu")
-
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.225, -0.275)
-shape = SubResource("CylinderShape3D_eaqvu")

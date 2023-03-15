@@ -10,6 +10,7 @@ func _ready():
 	Engine.set_max_fps(60)
 	Eventbus.interaction.connect(_set_interaction)
 	Eventbus.JournalCollected.connect(_add_journal)
+	Eventbus.NewLoop.connect(_end_clock)
 
 func _process(_delta) -> void:
 	if Input.is_action_just_pressed("journal") and Eventbus.FoundJournal:
@@ -49,3 +50,8 @@ func _on_timer_timeout():
 	if TimeLeft == 0:
 		Eventbus.emit_signal("NewLoop")
 		$Timer.stop()
+
+func _end_clock():
+	$Timer.stop()
+
+

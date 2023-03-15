@@ -14,6 +14,7 @@ func _update_code(new_code:String):
 	Screen.text = str(new_code)
 	if new_code.length() >= CorrectNumbers.length():
 		if new_code == CorrectNumbers:
+			Eventbus.MachineStage = 1
 			get_node(door).queue_free()
 			for child in $Buttons.get_children():
 				child.process_mode = Node.PROCESS_MODE_DISABLED
