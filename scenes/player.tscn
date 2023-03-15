@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cju7nivqmsjac"]
+[gd_scene load_steps=7 format=3 uid="uid://cju7nivqmsjac"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_nto1r"]
 [ext_resource type="Script" path="res://scripts/PlayerCamera.gd" id="2_g1suc"]
 [ext_resource type="Script" path="res://scripts/InteractionRay.gd" id="3_bs74y"]
+[ext_resource type="Script" path="res://scripts/Rewind.gd" id="4_hnpxx"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_v6wlc"]
 radius = 0.4
@@ -17,10 +18,10 @@ height = 1.839
 floor_constant_speed = true
 script = ExtResource("1_nto1r")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="BodyMesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_v6wlc")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="Collision" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_way5y")
 
 [node name="CameraHolder" type="Node3D" parent="."]
@@ -37,3 +38,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.248519)
 target_position = Vector3(0, 0, -2.5)
 collision_mask = 3
 script = ExtResource("3_bs74y")
+
+[node name="Rewind" type="Node" parent="."]
+script = ExtResource("4_hnpxx")
