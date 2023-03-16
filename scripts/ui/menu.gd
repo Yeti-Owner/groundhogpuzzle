@@ -5,15 +5,15 @@ extends Control
 @onready var InfoPopup := $InfoPopup
 
 func _ready():
-	title.position = Vector2(-300, 270)
-	vboxoptions.position = Vector2(-300, 179)
+	title.position = Vector2(-440, 313)
+	vboxoptions.position = Vector2(-442, 140)
 	InfoPopup.visible = false
 	_intro_anim()
 
 func _intro_anim():
 	var tween := get_tree().create_tween()
-	tween.tween_property(title, "position", Vector2(0, 135), 2).set_trans(Tween.TRANS_BOUNCE)
-	tween.tween_property(vboxoptions, "position", Vector2(11, 179), 2).set_trans(Tween.TRANS_ELASTIC)
+	tween.tween_property(title, "position", Vector2(15, 313), 3).set_trans(Tween.TRANS_BOUNCE)
+	tween.tween_property(vboxoptions, "position", Vector2(58, 140), 3).set_trans(Tween.TRANS_ELASTIC)
 
 func _on_info_pressed():
 	InfoPopup.visible = !InfoPopup.visible
@@ -28,4 +28,4 @@ func _on_quit_pressed():
 	get_tree().quit()
 
 func _on_poll_pressed():
-	SceneManager._swap_hud("res://scenes/poll.tscn")
+	SceneManager._swap_hud("res://scenes/UI/poll.tscn")

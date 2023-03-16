@@ -14,6 +14,7 @@ func _ready():
 	Game.use_occlusion_culling = true
 #	Engine.set_max_fps(120)
 	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_MAILBOX)
+	Eventbus.Complete.connect(_ending)
 
 func _change_scene(scene:String, type:String = "normal"):
 	# Room for new transitions later
@@ -48,3 +49,8 @@ func _swap_hud(hud):
 	var scene:PackedScene = load(hud)
 	var _scene:Node = scene.instantiate()
 	HUD.add_child(_scene)
+
+func _ending():
+	CurrentScene.queue_free()
+	CurrentScene = null
+	_swap_hud("res://scenes/UI/ending.tscn")

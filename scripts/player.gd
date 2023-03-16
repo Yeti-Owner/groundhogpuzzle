@@ -9,6 +9,7 @@ var gravity:float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready():
 	Eventbus.NewLoop.connect(_new_loop)
+	Eventbus.Complete.connect(_disable)
 
 func _physics_process(delta):
 	# Gravity
@@ -53,3 +54,9 @@ func _ending_anim():
 # When ending animation is done this is called
 func _restart():
 	print("_restart() called")
+	Eventbus._reset()
+
+func _disable():
+	_camera.set_process_input(false)
+	set_physics_process(false)
+	$Rewind.set_physics_process(false)

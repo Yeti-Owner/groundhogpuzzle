@@ -9,4 +9,4 @@ func _check_order(value):
 		if Order == CorrectOrder:
 			Eventbus.MachineStage = 2
 		else:
-			Eventbus.emit_signal("NewLoop")
+			Eventbus.CorrectOrder = false

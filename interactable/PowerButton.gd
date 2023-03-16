@@ -11,4 +11,7 @@ func get_interaction_icon():
 func interact():
 	if not Used:
 		Used = true
-		
+		if Eventbus.MachineStage == 6 and Eventbus.CorrectOrder == true:
+			Eventbus.emit_signal("Complete")
+		else:
+			Eventbus.emit_signal("NewLoop")

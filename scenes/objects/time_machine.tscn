@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://c35g7lwjaq47c"]
+[gd_scene load_steps=42 format=3 uid="uid://c35g7lwjaq47c"]
 
 [ext_resource type="Script" path="res://interactable/ParallaxInput.gd" id="1_v6eq2"]
 [ext_resource type="Script" path="res://scripts/SafetyProtocol.gd" id="2_ghdje"]
@@ -84,6 +84,13 @@ height = 0.1
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_li28l"]
 height = 0.1
 radius = 0.05
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aoikj"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gwfxe"]
+material = SubResource("StandardMaterial3D_aoikj")
+size = Vector3(0.137, 0.067, 0.022)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nvqwx"]
 
@@ -253,6 +260,10 @@ shape = SubResource("CylinderShape3D_li28l")
 [node name="Timer" type="Timer" parent="Keyhole"]
 wait_time = 0.5
 one_shot = true
+
+[node name="Key" type="MeshInstance3D" parent="Keyhole"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.052, 0, 0)
+mesh = SubResource("BoxMesh_gwfxe")
 
 [node name="CaseNumber" type="Node3D" parent="."]
 transform = Transform3D(0.941, 0, 0, 0, 0.941, 0, 0, 0, 0.941, 2.5, 0.821, 0.2)

@@ -14,7 +14,7 @@ func _update_code(new_num:String):
 	
 	if Nums.length() >= CorrectNums.length():
 		if Eventbus.MachineStage != 4:
-			Eventbus.emit_signal("NewLoop")
+			Eventbus.CorrectOrder = false
 		
 		if Nums == CorrectNums:
 			Eventbus.MachineStage = 5

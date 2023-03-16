@@ -18,4 +18,4 @@ func interact():
 		if Eventbus.MachineStage == 1:
 			get_parent()._check_order(Dir)
 		else:
-			Eventbus.emit_signal("NewLoop")
+			Eventbus.CorrectOrder = false
