@@ -1,32 +1,18 @@
-[gd_scene load_steps=19 format=3 uid="uid://c35g7lwjaq47c"]
+[gd_scene load_steps=40 format=3 uid="uid://c35g7lwjaq47c"]
 
 [ext_resource type="Script" path="res://interactable/ParallaxInput.gd" id="1_v6eq2"]
 [ext_resource type="Script" path="res://scripts/SafetyProtocol.gd" id="2_ghdje"]
 [ext_resource type="Script" path="res://interactable/CardinalDirections.gd" id="3_n3w2n"]
+[ext_resource type="Script" path="res://scripts/CaseNumber.gd" id="4_bqibj"]
+[ext_resource type="Script" path="res://interactable/CaseNumberButton.gd" id="4_o3bsp"]
+[ext_resource type="Script" path="res://interactable/Keyhole.gd" id="6_y378q"]
+[ext_resource type="Script" path="res://interactable/PowerButton.gd" id="7_tqgtg"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_3xwk8"]
 size = Vector3(5, 1.5, 3)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hqh28"]
 points = PackedVector3Array(-2.5, -0.75, -1.5, -2.5, 0.75, -1.5, 2.5, -0.75, -1.5, -2.5, -0.75, 1.5, -2.5, 0.75, 1.5, 2.5, 0.75, -1.5, 2.5, -0.75, 1.5, 2.5, 0.75, 1.5)
-
-[sub_resource type="TorusMesh" id="TorusMesh_25vmc"]
-inner_radius = 0.15
-outer_radius = 0.2
-ring_segments = 3
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_w1usa"]
-height = 0.2
-radius = 0.189
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_q6mjq"]
-top_radius = 0.15
-bottom_radius = 0.15
-height = 0.5
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_0xnv7"]
-height = 0.5
-radius = 0.15
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m3wql"]
 
@@ -55,6 +41,90 @@ size = Vector3(0.25, 0.25, 0.25)
 material = SubResource("StandardMaterial3D_qiqyc")
 size = Vector3(0.25, 0.25, 0.25)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e3efi"]
+
+[sub_resource type="TextMesh" id="TextMesh_sle36"]
+material = SubResource("StandardMaterial3D_e3efi")
+text = "Safety Verification"
+pixel_size = 0.011
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mogpr"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jhd4p"]
+material = SubResource("StandardMaterial3D_mogpr")
+size = Vector3(1.573, 0.231, 0.088)
+
+[sub_resource type="TorusMesh" id="TorusMesh_25vmc"]
+inner_radius = 0.15
+outer_radius = 0.2
+ring_segments = 3
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_w1usa"]
+height = 0.2
+radius = 0.189
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_q6mjq"]
+top_radius = 0.15
+bottom_radius = 0.15
+height = 0.5
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_0xnv7"]
+height = 0.5
+radius = 0.15
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w2lyt"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_u3o35"]
+material = SubResource("StandardMaterial3D_w2lyt")
+top_radius = 0.05
+bottom_radius = 0.05
+height = 0.1
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_li28l"]
+height = 0.1
+radius = 0.05
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nvqwx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_oioe0"]
+material = SubResource("StandardMaterial3D_nvqwx")
+size = Vector3(0.05, 0.56, 1.307)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d284y"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_eaa2a"]
+material = SubResource("StandardMaterial3D_d284y")
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.1
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_dv5ie"]
+height = 0.1
+radius = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_167gi"]
+albedo_color = Color(0.501961, 0.501961, 0.501961, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ts5qo"]
+material = SubResource("StandardMaterial3D_167gi")
+top_radius = 0.4
+bottom_radius = 0.4
+height = 0.144
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eeqbo"]
+albedo_color = Color(0.760784, 0.313726, 0.0156863, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_j6233"]
+material = SubResource("StandardMaterial3D_eeqbo")
+top_radius = 0.3
+bottom_radius = 0.3
+height = 0.254
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_tw2wu"]
+height = 0.254
+radius = 0.4
+
 [node name="TimeMachine" type="Node3D"]
 
 [node name="Body" type="MeshInstance3D" parent="."]
@@ -65,28 +135,6 @@ mesh = SubResource("BoxMesh_3xwk8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Body/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_hqh28")
-
-[node name="ParallaxInput" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.97654, 0.7, 1.5745)
-collision_layer = 2
-script = ExtResource("1_v6eq2")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ParallaxInput"]
-transform = Transform3D(1, 0, 0, 0, -2.05163e-07, -1, 0, 4.69359, -4.37114e-08, 0, 0, 0)
-mesh = SubResource("TorusMesh_25vmc")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ParallaxInput"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
-shape = SubResource("CylinderShape3D_w1usa")
-
-[node name="Insert" type="MeshInstance3D" parent="ParallaxInput"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
-mesh = SubResource("CylinderMesh_q6mjq")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="ParallaxInput/Insert"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ParallaxInput/Insert/StaticBody3D"]
-shape = SubResource("CylinderShape3D_0xnv7")
 
 [node name="SafetyProtocol" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.09525, 0.7, -1.5)
@@ -158,3 +206,253 @@ shape = SubResource("ConvexPolygonShape3D_woin2")
 [node name="Label3D" type="Label3D" parent="SafetyProtocol/West"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -0.126)
 text = "W"
+
+[node name="Marking" type="MeshInstance3D" parent="SafetyProtocol"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.3, -0.009)
+mesh = SubResource("TextMesh_sle36")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SafetyProtocol/Marking"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.016, -0.042)
+mesh = SubResource("BoxMesh_jhd4p")
+
+[node name="ParallaxInput" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.97654, 0.7, 1.5745)
+collision_layer = 2
+script = ExtResource("1_v6eq2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ParallaxInput"]
+transform = Transform3D(1, 0, 0, 0, -2.05163e-07, -1, 0, 4.69359, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("TorusMesh_25vmc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ParallaxInput"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("CylinderShape3D_w1usa")
+
+[node name="Insert" type="MeshInstance3D" parent="ParallaxInput"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CylinderMesh_q6mjq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ParallaxInput/Insert"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ParallaxInput/Insert/StaticBody3D"]
+shape = SubResource("CylinderShape3D_0xnv7")
+
+[node name="Keyhole" type="StaticBody3D" parent="."]
+transform = Transform3D(0.941, 0, 0, 0, 0.941, 0, 0, 0, 0.941, 2.47742, 0.721254, -0.800283)
+collision_layer = 2
+script = ExtResource("6_y378q")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Keyhole"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_u3o35")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Keyhole"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CylinderShape3D_li28l")
+
+[node name="Timer" type="Timer" parent="Keyhole"]
+wait_time = 0.5
+one_shot = true
+
+[node name="CaseNumber" type="Node3D" parent="."]
+transform = Transform3D(0.941, 0, 0, 0, 0.941, 0, 0, 0, 0.941, 2.5, 0.821, 0.2)
+script = ExtResource("4_bqibj")
+
+[node name="Screen" type="MeshInstance3D" parent="CaseNumber"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+mesh = SubResource("BoxMesh_oioe0")
+
+[node name="Label3D" type="Label3D" parent="CaseNumber/Screen"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.026, 0, 0)
+font_size = 108
+
+[node name="Numbers" type="Node3D" parent="CaseNumber"]
+
+[node name="0" type="StaticBody3D" parent="CaseNumber/Numbers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0.5)
+collision_layer = 2
+script = ExtResource("4_o3bsp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CaseNumber/Numbers/0"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_eaa2a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CaseNumber/Numbers/0"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CylinderShape3D_dv5ie")
+
+[node name="Label3D" type="Label3D" parent="CaseNumber/Numbers/0"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.051, 0, 0)
+text = "0"
+
+[node name="1" type="StaticBody3D" parent="CaseNumber/Numbers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0.15)
+collision_layer = 2
+script = ExtResource("4_o3bsp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CaseNumber/Numbers/1"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_eaa2a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CaseNumber/Numbers/1"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CylinderShape3D_dv5ie")
+
+[node name="Label3D" type="Label3D" parent="CaseNumber/Numbers/1"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.051, 0, 0)
+text = "1"
+
+[node name="2" type="StaticBody3D" parent="CaseNumber/Numbers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, -0.15)
+collision_layer = 2
+script = ExtResource("4_o3bsp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CaseNumber/Numbers/2"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_eaa2a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CaseNumber/Numbers/2"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CylinderShape3D_dv5ie")
+
+[node name="Label3D" type="Label3D" parent="CaseNumber/Numbers/2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.051, 0, 0)
+text = "2"
+
+[node name="3" type="StaticBody3D" parent="CaseNumber/Numbers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, -0.5)
+collision_layer = 2
+script = ExtResource("4_o3bsp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CaseNumber/Numbers/3"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_eaa2a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CaseNumber/Numbers/3"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CylinderShape3D_dv5ie")
+
+[node name="Label3D" type="Label3D" parent="CaseNumber/Numbers/3"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.051, 0, 0)
+text = "3"
+
+[node name="4" type="StaticBody3D" parent="CaseNumber/Numbers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0.5)
+collision_layer = 2
+script = ExtResource("4_o3bsp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CaseNumber/Numbers/4"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_eaa2a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CaseNumber/Numbers/4"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CylinderShape3D_dv5ie")
+
+[node name="Label3D" type="Label3D" parent="CaseNumber/Numbers/4"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.051, 0, 0)
+text = "4"
+
+[node name="5" type="StaticBody3D" parent="CaseNumber/Numbers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0.15)
+collision_layer = 2
+script = ExtResource("4_o3bsp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CaseNumber/Numbers/5"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_eaa2a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CaseNumber/Numbers/5"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CylinderShape3D_dv5ie")
+
+[node name="Label3D" type="Label3D" parent="CaseNumber/Numbers/5"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.051, 0, 0)
+text = "5"
+
+[node name="6" type="StaticBody3D" parent="CaseNumber/Numbers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, -0.15)
+collision_layer = 2
+script = ExtResource("4_o3bsp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CaseNumber/Numbers/6"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_eaa2a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CaseNumber/Numbers/6"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CylinderShape3D_dv5ie")
+
+[node name="Label3D" type="Label3D" parent="CaseNumber/Numbers/6"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.051, 0, 0)
+text = "6"
+
+[node name="7" type="StaticBody3D" parent="CaseNumber/Numbers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, -0.5)
+collision_layer = 2
+script = ExtResource("4_o3bsp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CaseNumber/Numbers/7"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_eaa2a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CaseNumber/Numbers/7"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CylinderShape3D_dv5ie")
+
+[node name="Label3D" type="Label3D" parent="CaseNumber/Numbers/7"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.051, 0, 0)
+text = "7"
+
+[node name="8" type="StaticBody3D" parent="CaseNumber/Numbers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7, 0.15)
+collision_layer = 2
+script = ExtResource("4_o3bsp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CaseNumber/Numbers/8"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_eaa2a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CaseNumber/Numbers/8"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CylinderShape3D_dv5ie")
+
+[node name="Label3D" type="Label3D" parent="CaseNumber/Numbers/8"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.051, 0, 0)
+text = "8"
+
+[node name="9" type="StaticBody3D" parent="CaseNumber/Numbers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7, -0.15)
+collision_layer = 2
+script = ExtResource("4_o3bsp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CaseNumber/Numbers/9"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_eaa2a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CaseNumber/Numbers/9"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CylinderShape3D_dv5ie")
+
+[node name="Label3D" type="Label3D" parent="CaseNumber/Numbers/9"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.051, 0, 0)
+text = "9"
+
+[node name="PowerButton" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0.7, 0)
+collision_layer = 3
+script = ExtResource("7_tqgtg")
+
+[node name="Base" type="MeshInstance3D" parent="PowerButton"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_ts5qo")
+
+[node name="Button" type="MeshInstance3D" parent="PowerButton"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_j6233")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PowerButton"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CylinderShape3D_tw2wu")
+
+[connection signal="timeout" from="Keyhole/Timer" to="Keyhole" method="_on_timer_timeout"]

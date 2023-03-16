@@ -21,3 +21,4 @@ func _update_code(new_code:String):
 		else:
 			NumberCombo = ""
 			new_code = ""
+			Screen.text = ""

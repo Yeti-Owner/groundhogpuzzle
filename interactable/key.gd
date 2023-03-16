@@ -11,6 +11,7 @@ func get_interaction_icon():
 func interact():
 	if not Used:
 		Used = true
+		Eventbus.HasKey = true
 		Eventbus.JournalEntries.append("key")
 		Eventbus.emit_signal("UpdatedJournal")
 		self.queue_free()
