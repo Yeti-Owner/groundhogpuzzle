@@ -91,6 +91,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -14.0
+offset_right = 7.99988
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.486275, 1, 1, 0.376471)
@@ -100,7 +102,8 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -51.0
+offset_left = -43.1982
+offset_right = 7.80176
 offset_bottom = 44.0
 grow_horizontal = 0
 theme_override_font_sizes/font_size = 26
@@ -112,23 +115,22 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -26.5
-offset_bottom = 0.5
+offset_top = 41.0
+offset_right = -0.00012207
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 18
-text = "
-
-Hey!
+text = "Hey!
 This is a simple prototype of what can later be a full game.
 
 Directions:
 WASD to move, Space to jump, E to interact, Q for journal
 
 Objective:
-Look around for clues, you have 2 minutes before dying, use your journal to solve your death."
+Look around for clues, you have 1 minute and 30 seconds before a time anomaly, figure out how to stop it"
 horizontal_alignment = 1
 autowrap_mode = 2
 

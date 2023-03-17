@@ -31,6 +31,9 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	
 	move_and_slide()
+	
+	if Input.is_action_just_pressed("ui_accept"):
+		print(Eventbus.CanPoll)
 
 
 func _new_loop():
@@ -55,6 +58,8 @@ func _ending_anim():
 func _restart():
 	print("_restart() called")
 	Eventbus._reset()
+	Eventbus.Restarts += 1
+	SceneManager._reload_scene()
 
 func _disable():
 	_camera.set_process_input(false)

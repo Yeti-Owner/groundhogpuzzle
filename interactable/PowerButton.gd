@@ -14,4 +14,5 @@ func interact():
 		if Eventbus.MachineStage == 6 and Eventbus.CorrectOrder == true:
 			Eventbus.emit_signal("Complete")
 		else:
+			get_parent().get_node("Explosion").get_child(0).emitting = true
 			Eventbus.emit_signal("NewLoop")

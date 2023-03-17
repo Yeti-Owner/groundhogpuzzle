@@ -4,7 +4,7 @@ extends CanvasLayer
 @onready var InteractIcon := $CenterContainer/crosshair
 @onready var ClockText := $ClockTex/TimeLeft
 
-var TimeLeft:int = 120 # Time in seconds
+var TimeLeft:int = 90 # Time in seconds
 
 func _ready():
 	Engine.set_max_fps(60)

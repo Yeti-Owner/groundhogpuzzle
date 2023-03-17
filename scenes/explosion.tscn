@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://5xdgvohycw1g"]
+
+[ext_resource type="Texture2D" uid="uid://d0jjcfceax4lx" path="res://assets/textures/Cloud.png" id="1_kginh"]
+
+[sub_resource type="Gradient" id="Gradient_g2byd"]
+offsets = PackedFloat32Array(0, 0.406504, 0.642276, 1)
+colors = PackedColorArray(0.572669, 1.02278e-06, 1.92523e-07, 1, 0.843971, 0.470552, 0.190022, 1, 0.77, 0.40425, 0.0385, 1, 0.65098, 0.447059, 0.266667, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qnpgy"]
+gradient = SubResource("Gradient_g2byd")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qsp14"]
+direction = Vector3(0, 1, 0)
+spread = 120.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 1.17
+initial_velocity_max = 1.31
+scale_min = 0.46
+scale_max = 1.53
+color = Color(0.87451, 0.662745, 0.486275, 1)
+color_ramp = SubResource("GradientTexture1D_qnpgy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yqyx7"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_kginh")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_27sv6"]
+material = SubResource("StandardMaterial3D_yqyx7")
+size = Vector2(0.55, 0.55)
+
+[node name="Explosion" type="Node3D"]
+
+[node name="ExplosionParticles" type="GPUParticles3D" parent="."]
+emitting = false
+amount = 30
+one_shot = true
+explosiveness = 0.89
+randomness = 0.23
+process_material = SubResource("ParticleProcessMaterial_qsp14")
+draw_pass_1 = SubResource("QuadMesh_27sv6")

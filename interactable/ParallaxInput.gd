@@ -28,4 +28,5 @@ func interact():
 				$Insert.visible = true
 				$Insert/StaticBody3D/CollisionShape3D.disabled = false
 			else:
+				$Insert.visible = true
 				Eventbus.CorrectOrder = false

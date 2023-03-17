@@ -21,3 +21,7 @@ func _on_submit_pressed():
 			Order[i] = child.text
 	
 	_make_post_request(url, Order)
+	
+	Eventbus.CanPoll += 1
+	SceneManager._swap_hud("res://scenes/UI/menu.tscn")
+	Eventbus._save()

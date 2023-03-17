@@ -5,6 +5,8 @@ extends Control
 @onready var InfoPopup := $InfoPopup
 
 func _ready():
+	if Eventbus.CanPoll == 1: $VBoxContainer/Poll.visible = true
+	else: $VBoxContainer/Poll.visible = false
 	title.position = Vector2(-440, 313)
 	vboxoptions.position = Vector2(-442, 140)
 	InfoPopup.visible = false
@@ -22,6 +24,7 @@ func _on_info_close_pressed():
 	InfoPopup.visible = false
 
 func _on_start_pressed():
+	Eventbus._reset()
 	SceneManager._change_scene("res://world.tscn")
 
 func _on_quit_pressed():

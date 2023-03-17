@@ -38,6 +38,7 @@ func interact():
 					$CollisionShape3D.disabled = true
 				else:
 					Eventbus.CorrectOrder = false
+					$CollisionShape3D.disabled = true
 
 func _on_timer_timeout():
 	Stage = 1

@@ -4,6 +4,9 @@ extends Interactable
 
 var Used = false
 
+func _ready():
+	$Mesh.mesh.material.albedo_color = Color8(255, 255, 255)
+
 func get_interaction_text():
 	return "[center]Press E to enter [color=ROYAL_BLUE]%s[/color][/center]" % Dir
 
