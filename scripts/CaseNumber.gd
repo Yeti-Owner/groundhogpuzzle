@@ -2,7 +2,7 @@ extends Node3D
 
 @onready var Screen := $Screen/Label3D
 
-var CorrectNums:String = "9834"
+var CorrectNums:String = str(Eventbus.KeyNum)
 var Nums:String = ""
 
 func _ready():

@@ -31,9 +31,6 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	
 	move_and_slide()
-	
-	if Input.is_action_just_pressed("ui_accept"):
-		print(Eventbus.CanPoll)
 
 
 func _new_loop():

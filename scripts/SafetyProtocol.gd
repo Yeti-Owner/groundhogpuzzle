@@ -1,6 +1,6 @@
 extends Node3D
 
-var CorrectOrder:Array = ["South","North","East","West"]
+@onready var CorrectOrder = Eventbus.SecurityOrder
 var Order:Array = []
 
 func _check_order(value):

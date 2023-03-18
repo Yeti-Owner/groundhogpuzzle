@@ -17,13 +17,24 @@ var CorrectOrder:bool = true
 var Restarts:int = 0
 
 # Randomized vars
-# TODO, DO NOT FORGET FUTURE CALLUM
+var KeyNum
+var KeypadNum:int
+var SecurityOrder = ["South","North","East","West"]
 
 # Saving/Loading
 const SavePath := "user://groundhog.dat"
 var CanPoll:int = 0
 
 func _ready():
+	randomize()
+	KeyNum = randi_range(1000, 9999)
+	for i in range(0, 7):
+		var digit:int = randi_range(1, 9)
+		@warning_ignore("narrowing_conversion")
+		KeypadNum += digit * pow(10, i)
+	print(KeypadNum)
+	SecurityOrder.shuffle()
+	
 	if not FileAccess.file_exists(SavePath):
 		_save()
 	else:

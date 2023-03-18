@@ -4,7 +4,7 @@ extends Node3D
 @export var door:NodePath
 
 var NumberCombo = "" : set = _update_code
-var CorrectNumbers:String = "3879498"
+@onready var CorrectNumbers:String = str(Eventbus.KeypadNum)
 
 func _ready():
 	Screen.text = ""
