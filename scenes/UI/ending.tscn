@@ -31,7 +31,10 @@ offset_right = -50.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 34
-text = "Hey, congrats on finishing my game! I'm so glad you played it and I hope you had a blast. I'd love to hear your thoughts and feedback. Hit me up on Twitter @Yeti_Owner or find me on Discord at YetiOwner#3258 and let me know what you thought. Just so you know, this game is just a prototype and I'm working on a few others too. Your feedback could help me choose which game to develop into a full version. Oh, and if you go back to the menu, there's a new option where you can vote on the name of this game. Thanks so much for playing, and I can't wait to hear from you!"
+text = "Hey, congrats on finishing my game! I'm so glad you played it and I hope you had a blast. I'd love to hear your thoughts and feedback. Hit me up on Twitter @Yeti_Owner or find me on Discord at YetiOwner#3258 and let me know what you thought. Just so you know, this game is just a prototype and I'm working on a few others too. Your feedback could help me choose which game to develop into a full version. Oh, and if you go back to the menu, there's a new option where you can vote on the name of this game. Thanks so much for playing, and I can't wait to hear from you!
+
+If this game is the most liked of the 3 total prototypes I make then I will add the following features:
+Audio, Physics, better textures, better optimization, animations, much more content, pause menu, control menu, collectables, inventory, hints, dialogue, choices"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -44,9 +47,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -258.0
-offset_top = 171.5
+offset_top = 285.5
 offset_right = 258.0
-offset_bottom = 266.5
+offset_bottom = 380.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 28
@@ -62,9 +65,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -108.5
-offset_top = 290.0
+offset_top = 404.0
 offset_right = 108.5
-offset_bottom = 374.0
+offset_bottom = 488.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 55
