@@ -24,7 +24,7 @@ Eventbus="*res://scripts/Eventbus.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=3
+window/size/mode=4
 window/size/resizable=false
 window/size/window_width_override=1920
 window/size/window_height_override=1080

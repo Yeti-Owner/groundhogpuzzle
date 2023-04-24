@@ -125,13 +125,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 0
 stretch = true
 stretch_shrink = 4
 
 [node name="HUD" type="Control" parent="GameScene"]
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 2
-mouse_filter = 1
+mouse_filter = 2
 
 [node name="Game" type="SubViewport" parent="GameScene"]
 process_mode = 3
