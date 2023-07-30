@@ -11,12 +11,15 @@ var CameraY:Array = []
 
 var Mode:bool = true # True = record, False = replay
 
+var SkipFrame:bool = false # Skips every other frame so it speeds up the replay
+
 func _physics_process(_delta):
-	if Mode:
+	SkipFrame = !SkipFrame
+	if (Mode == true) and (SkipFrame == true):
 		PlayerPos.append(Player.global_transform)
 		CameraX.append(Cam.get_rotation())
 		CameraY.append(CamHolder.get_rotation())
-	else:
+	elif Mode == false:
 		if PlayerPos.size() > 0:
 			Player.global_transform = PlayerPos[-1]
 			Cam.set_rotation(CameraX[-1])

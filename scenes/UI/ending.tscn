@@ -33,7 +33,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 34
 text = "Hey, congrats on finishing my game! I'm so glad you played it and I hope you had a blast. I'd love to hear your thoughts and feedback. Hit me up on Twitter @Yeti_Owner or find me on Discord at YetiOwner#3258 and let me know what you thought. Just so you know, this game is just a prototype and I'm working on a few others too. Your feedback could help me choose which game to develop into a full version. Oh, and if you go back to the menu, there's a new option where you can vote on the name of this game. Thanks so much for playing, and I can't wait to hear from you!
 
-If this game is the most liked of the 3 total prototypes I make then I will add the following features:
+If this game is the most liked of the prototypes I make then I will add the following features:
 Audio, Physics, better textures, better optimization, animations, much more content, pause menu, control menu, collectables, inventory, hints, dialogue, choices"
 horizontal_alignment = 1
 vertical_alignment = 1
