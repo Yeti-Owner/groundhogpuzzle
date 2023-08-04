@@ -144,3 +144,6 @@ audio_listener_enable_2d = true
 audio_listener_enable_3d = true
 size = Vector2i(480, 270)
 render_target_update_mode = 4
+
+[connection signal="mouse_entered" from="GameScene" to="." method="_on_game_scene_mouse_entered"]
+[connection signal="mouse_exited" from="GameScene" to="." method="_on_game_scene_mouse_exited"]
