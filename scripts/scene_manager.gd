@@ -56,7 +56,9 @@ func _ending():
 	_swap_hud("res://scenes/UI/ending.tscn")
 
 func _on_game_scene_mouse_entered():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	pass
+#	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _on_game_scene_mouse_exited():
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	pass
+#	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
